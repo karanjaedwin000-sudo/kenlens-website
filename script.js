@@ -1,8 +1,6 @@
 // Update these destinations with your real contact links before publishing.
 const KENLENS = {
   youtube: 'https://www.youtube.com/',
-  publicGallery: 'https://drive.google.com/',
-  clientGallery: 'https://drive.google.com/',
   email: 'hello@kenlens.com',
   whatsappNumbers: ['254118265534', '25426749232', '254700368311'],
   whatsappMessage: 'Hello Kenlens, I have an enquiry about your services.',
@@ -12,8 +10,6 @@ const KENLENS = {
 };
 
 document.querySelectorAll('[data-link="youtube"]').forEach(link => link.href = KENLENS.youtube);
-document.querySelectorAll('[data-link="public-gallery"]').forEach(link => link.href = KENLENS.publicGallery);
-document.querySelectorAll('[data-link="client-gallery"]').forEach(link => link.href = KENLENS.clientGallery);
 document.querySelectorAll('[data-link="email"]').forEach(link => link.href = 'mailto:' + KENLENS.email);
 document.querySelectorAll('[data-link="whatsapp"]').forEach(link => link.href = 'https://wa.me/' + KENLENS.whatsappNumbers[0] + '?text=' + encodeURIComponent(KENLENS.whatsappMessage));
 
@@ -53,4 +49,5 @@ if (menuButton && nav) {
   });
 }
 document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
+
 

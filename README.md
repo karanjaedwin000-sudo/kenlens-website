@@ -20,12 +20,10 @@ This is a static multi-page website. Keep all HTML pages, `styles.css`, and `scr
 Open `script.js` and update the `KENLENS` settings near the top:
 
 - `youtube` — your YouTube channel URL
-- `publicGallery` — the public Google Drive folder URL
-- `clientGallery` — reserved for your client gallery setup; send individual private links directly to each client
 - `email` — your customer service email
 - `whatsappNumbers` — the three WhatsApp contacts (digits only, including country code)
 
-In Google Drive, set the public gallery folder to **Anyone with the link**. Keep each customer's private event folder shared only with that customer.
+The gallery buttons currently say “Gallery link coming soon.” Add your new public gallery link to the site when the new account is ready. Share client event galleries privately with each customer.
 
 ## Set the current live video
 
@@ -34,3 +32,4 @@ In `script.js`, change `liveVideoId` before each broadcast. For a YouTube URL su
 ## Publish with GitHub Pages
 
 Create a GitHub repository and upload all the files in this folder to the repository root. In the repository settings, enable GitHub Pages and publish from the `main` branch and root folder. The home page is `index.html`.
+
