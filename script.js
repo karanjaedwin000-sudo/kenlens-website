@@ -20,23 +20,27 @@ document.querySelectorAll('.live-embed').forEach(player => {
   }
 });
 
-const numberList = document.getElementById('whatsapp-numbers');
-if (numberList) {
-  KENLENS.whatsappNumbers.forEach(number => {
-    const link = document.createElement('a');
-    link.href = 'https://wa.me/' + number + '?text=' + encodeURIComponent(KENLENS.whatsappMessage);
-    link.target = '_blank';
-    link.rel = 'noopener';
-    link.textContent = '+' + number;
-    numberList.appendChild(link);
-  });
-}
-const chatButton = document.getElementById('whatsapp-chat');
-if (chatButton) {
-  chatButton.addEventListener('click', () => {
-    const options = document.getElementById('whatsapp-options');
-    const open = options.classList.toggle('open');
-    chatButton.setAttribute('aria-expanded', open);
+const phoneList = document.getElementById('phone-numbers');
+const whatsappList = document.getElementById('whatsapp-numbers');
+KENLENS.whatsappNumbers.forEach(number => {
+  const phone = document.createElement('a');
+  phone.href = 'tel:+' + number;
+  phone.textContent = '+' + number;
+  phoneList?.appendChild(phone);
+
+  const whatsapp = document.createElement('a');
+  whatsapp.href = 'https://wa.me/' + number + '?text=' + encodeURIComponent(KENLENS.whatsappMessage);
+  whatsapp.target = '_blank';
+  whatsapp.rel = 'noopener';
+  whatsapp.textContent = '+' + number;
+  whatsappList?.appendChild(whatsapp);
+});
+const contactToggle = document.getElementById('contact-toggle');
+if (contactToggle) {
+  contactToggle.addEventListener('click', () => {
+    const panel = document.getElementById('contact-panel');
+    const open = panel.classList.toggle('open');
+    contactToggle.setAttribute('aria-expanded', open);
   });
 }
 const menuButton = document.querySelector('.menu-button');
@@ -50,4 +54,17 @@ if (menuButton && nav) {
 }
 document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
 
+
+
+document.querySelectorAll('.service-enquiry').forEach(form => {
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const service = form.dataset.serviceEnquiry;
+    const details = Array.from(new FormData(form).entries()).map(([label, value]) => `${label}: ${value}`).join('\n');
+    const message = `Kenlens ${service} enquiry\n\n${details}`;
+    const url = 'https://wa.me/' + KENLENS.whatsappNumbers[0] + '?text=' + encodeURIComponent(message);
+    window.open(url, '_blank', 'noopener');
+  });
+});
 

@@ -33,3 +33,17 @@ In `script.js`, change `liveVideoId` before each broadcast. For a YouTube URL su
 
 Create a GitHub repository and upload all the files in this folder to the repository root. In the repository settings, enable GitHub Pages and publish from the `main` branch and root folder. The home page is `index.html`.
 
+
+## Enquiry forms and packages
+
+The Photography, Videography and Streaming pages each have an enquiry form. Visitors enter their event and contact details, then choose **Continue to WhatsApp** to prepare a message for the first number in the WhatsApp list in `script.js`.
+
+The package cards and package choices currently use temporary labels and say “Price to be added.” Replace those labels, inclusions, and prices in the relevant main page HTML once your package details are finalized.
+
+## Home page background image
+
+The home page hero background uses `images/lens.jpeg`. Keep the `images` folder beside `styles.css` when uploading the site.
+
+## Floating contact desk
+
+Every page includes a floating Contact desk with email, the service enquiry form, phone call links, and WhatsApp links for all three customer service numbers. Update the `email` setting in `script.js` before publishing so the email option reaches the right inbox.
